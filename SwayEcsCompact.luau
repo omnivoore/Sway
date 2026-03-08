@@ -11,7 +11,6 @@ local wave = 2 * math.pi
 local random = Random.new()
 
 ---- ecs state
-local nextEntityId = 0
 local connection: RBXScriptConnection?
 
 local instanceCount = 0
@@ -30,20 +29,10 @@ local swayIsMotor = {}
 
 local swayVariableValue = {}
 
----- entities
-local instanceEntities = {}         -- [entity] = true
-local variableEntities = {}         -- [entity] = true
-
 ---- defaults
 local defaultSpeed = 1
 local defaultIntensity = vector.one
 local defaultRotationMultiplier = 1
----- ecs helpers
-local function newEntity(): number
-	nextEntityId += 1
-	return nextEntityId
-
-end
 
 ---- core
 local function startSystem()
